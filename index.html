@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DIGICAL - Powered by Digi Acoustics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    DIGICAL<br />
+    <span class="tagline">Powered by Digi Acoustics</span>
+  </header>
+  <nav class="tab-nav">
+    <button id="tabCalc" class="tab-btn active">Calculator</button>
+    <button id="tabProjects" class="tab-btn">Projects</button>
+  </nav>
+  <main>
+    <!-- CALCULATOR TAB -->
+    <section id="calcSection">
+      <!-- Project Details -->
+      <section class="card" id="project-details">
+        <h2>Project Details</h2>
+        <div class="input-row">
+          <label for="projectName">Project Name</label>
+          <input id="projectName" type="text" placeholder="" />
+          <label for="clientName">Client Name</label>
+          <input id="clientName" type="text" placeholder="" />
+          <label for="projectLocation">Location</label>
+          <input id="projectLocation" type="text" placeholder="" />
+        </div>
+      </section>
+
+      <!-- Room Management -->
+      <section class="card" id="rooms-section">
+        <div class="room-header">
+          <h2>Rooms</h2>
+          <button class="add-room-btn" id="addRoomBtn">+ Add Room</button>
+        </div>
+        <div class="room-list" id="roomTabs"></div>
+        <form id="roomForm" autocomplete="off"></form>
+      </section>
+
+      <!-- Results -->
+      <section id="results"></section>
+      <section id="total-summary"></section>
+
+      <!-- Action Buttons -->
+      <div class="actions-row">
+        <button class="action-btn calculate" id="calculateBtn">Calculate</button>
+        <button class="action-btn save" id="saveBtn">Save</button>
+        <button class="action-btn share" id="shareBtn">Share</button>
+        <button class="action-btn reset" id="resetBtn">Reset</button>
+        <button class="action-btn screenshot" id="screenshotBtn">Screen Shot</button>
+      </div>
+    </section>
+
+    <!-- PROJECTS TAB -->
+    <section id="projectsSection" style="display:none">
+      <section class="card">
+        <h2>Saved Projects</h2>
+        <div class="input-row" style="align-items:center; gap:0.5em;">
+          <label for="savedProjects" style="flex:none;">Select Project</label>
+          <select id="savedProjects" style="flex:1;">
+            <option value="">-- Select project --</option>
+          </select>
+        </div>
+        <div class="input-row" style="gap:0.7em; justify-content: flex-start;">
+          <button id="loadProjectBtn" type="button" class="action-btn load" style="background:var(--accent2);min-width:120px;">Load</button>
+          <button id="deleteProjectBtn" type="button" class="action-btn delete" style="background:#e53e3e;min-width:120px;">Delete</button>
+        </div>
+        <div class="project-info" id="projectMeta"></div>
+      </section>
+    </section>
+  </main>
+  <footer class="footer">
+    Created with <b>DIGICAL</b> by Digi Acoustics.
+    <div class="timestamp" id="timestamp"></div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
